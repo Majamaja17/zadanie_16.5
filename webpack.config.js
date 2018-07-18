@@ -1,7 +1,6 @@
 const path = require('path');
 
-module.exports = {
-    module.exports = (env) => {
+module.exports = (env) => {
     const environment = env || 'production';
 
     return {
@@ -12,25 +11,25 @@ module.exports = {
             filename: 'app.' + environment + '.bundle.js'
         },
         
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                loader: "babel-loader"
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    { loader: 'style-loader'},
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    loader: "babel-loader"
+                },
+                {
+                    test: /\.css$/,
+                    use: [
+                        { loader: 'style-loader'},
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                modules: true
+                            }
                         }
-                    }
-                ]
-            }
-        ]
+                    ]
+                }
+            ]
+        }
     }
 };
-
